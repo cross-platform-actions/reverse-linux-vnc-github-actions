@@ -44,4 +44,3 @@ All of those secrets are required for the script to work, if you forget to add o
 10) Once connected, select "Use default panel layout" and Enjoy!
 
 ### Please note that the duration of the runners in GitHub Actions is for 6 hours, so, the VNC server lasts 6 hours.
-
