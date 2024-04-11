@@ -25,4 +25,4 @@ jobs:
       # legacy run command-- run: cd $HOME && vncserver :1 -geometry $VNC_SCREENSIZE -depth $VNC_DEPTHVALUE -rfbport 7582
       run: export PATH=$PATH:/opt/TurboVNC/bin && cd $HOME && vncserver :1 -geometry $VNC_SCREENSIZE -depth $VNC_DEPTHVALUE -rfbport 7582
     - name: Creating tunnel with ngrok...
-      run: ./ngrok tcp 7582
+      run: ngrok tcp 7582
