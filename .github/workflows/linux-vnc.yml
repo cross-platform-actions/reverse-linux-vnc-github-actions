@@ -3,7 +3,7 @@
 # During the process, it should get stuck at the last step where it creates a new tunnel on ngrok.
 
 name: Ubuntu
-on: [push]
+on: [push, workflow_dispatch]
 defaults:
   run:
     shell: bash
