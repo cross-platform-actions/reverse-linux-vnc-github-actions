@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
     - name: Preparing environment...
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
@@ -24,13 +24,12 @@ jobs:
 
     - uses: hashicorp/setup-packer@main
       with:
-        version: "1.7.1"
+        version: "1.14.2"
 
     - name: Install UEFI
       if: matrix.architecture == 'x86-64'
       run: |
-        bash -c "apt update
-        apt install ovmf
+        sudo apt install ovmf
         cp /usr/share/ovmf/OVMF.fd resources/ovmf.fd"
 
     - name: Enable KVM
@@ -41,9 +40,8 @@ jobs:
 
     - name: Clone
       run: |
-        git clone https://github.com/cross-platform-actions/openbsd-builder.git
-        cd openbsd-builder
-        git checkout -b openbsd-7.5 origin/openbsd-7.5
+        git clone https://github.com/cross-platform-actions/omnios-builder.git
+        cd omnios-builder
 
     - name: Starting VNC Server...
       env:
